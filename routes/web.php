@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CheckController;
 use App\Http\Controllers\PadronesController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
@@ -36,3 +37,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::middleware(['auth:sanctum', 'verified'])->resource('user',UserController::class)->only(['index','edit','update','show','destroy','create','store'])->names('user');
 Route::middleware(['auth:sanctum', 'verified'])->resource('padron',PadronesController::class)->names('padron');
+Route::middleware(['auth:sanctum', 'verified'])->resource('check',CheckController::class)->names('check');
+Route::middleware(['auth:sanctum', 'verified'])->post('consultarPadron', [PadronesController::class,'consultarPadron'])->name('consultarPadron');
+Route::middleware(['auth:sanctum', 'verified'])->post('checkearVotante', [CheckController::class,'check'])->name('checkearVotante');
+

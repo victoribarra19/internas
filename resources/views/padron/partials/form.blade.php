@@ -8,7 +8,7 @@
     @enderror
 </div>
 <div class="form-group">    
-    {!! Form::label('nombre','NOMBRES:') !!}
+    {!! Form::label('nombre','NOMBRE/S:') !!}
     {!! Form::text('nombre', null, ['class'=>'form-control-plaintext' ,'disabled','id'=>'nombre']) !!}
     {{---{!! Form::text('nombre', null, ['class'=>'form-control','placeholder'=>'Ingrese el nombre de la persona' ,'required']) !!}--}}
     @error('nombre')
@@ -16,7 +16,7 @@
     @enderror
 </div>
 <div class="form-group">
-    {!! Form::label('apellido','APELLIDOS:') !!}
+    {!! Form::label('apellido','APELLIDO/S:') !!}
     {!! Form::text('apellido', null, ['class'=>'form-control-plaintext' ,'disabled','id'=>'apellido']) !!}
     @error('apellido')
         <small class="text-danger">{{$message}}</small>

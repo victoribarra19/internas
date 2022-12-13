@@ -38,16 +38,24 @@ class PadronesController extends Controller
      * @param  \App\Http\Requests\StorePadronesRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        $padron=DB::table('padrones')->where("numero_ced","=",$request->nroCi)->get();
-        if($padron->count()>0) {   
-            return response()->json(['id'=>$padron->id,'cedula'=>$padron->cedula,'nombre'=>$padron->nombre,'apellido'=>$padron->apellido,'fecha_nac'=>$padron->fecha_naci,'departamento'=>$padron->fecha_naci,'distrito'=>$padron->distrito,'nroSeccional'=>$padron->nroSeccional,'seccional'=>$padron->seccional,'seccional'=>$padron->seccional]);
-                /*return response()->json(['error'=>3]);*/ 
-        }else{
-            return redirect()->route('padron.index')->with(['error'=>'1']);
-        }
+    public function store(StorePadronesRequest $request)
+    {   
+       // $padron=Padrones::all()->where("numero_ced","=",".$request->nroCi.");
+        //$padron=DB::table('padrones')->where("numero_ced","=","".$request->nroCi)->get();
+        //return response()->json(['success'=>'1','id'=>$padron->id,'cedula'=>$padron->numero_ced]);
+        
     }
+    public function consultarPadron(Request $request)
+    {   
+       // return $request->nroCi;
+         //$padron=Padrones::all()->where("numero_ced","=",$request->nroCi);
+          $padron=DB::table('Padrones')->where("numero_ced","=",$request->nroCi)->get();
+     
+        //$padron=DB::table('padrones')->where("numero_ced","=","".$request->nroCi)->get();
+       return response()->json(['success'=>'1','cedula'=>$padron[0]->numero_ced,'nombre'=>$padron[0]->nombre,'apellido'=>$padron[0]->apellido,'fecha_nac'=>$padron[0]->fecha_naci,'departamento'=>$padron[0]->desc_dep,'distrito'=>$padron[0]->desc_dis,'nroSeccional'=>$padron[0]->codigo_sec,'seccional'=>$padron[0]->desc_sec,'local'=>$padron[0]->desc_locanr,'mesa'=>$padron[0]->mesa,'orden'=>$padron[0]->orden]);
+        
+    }   
+    
 
     /**
      * Display the specified resource.
