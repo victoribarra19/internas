@@ -138,11 +138,22 @@
                               },  
                               success:function(response){
                                   console.log(response);
-                                  Swal.fire(
-                                      'VOTANTE CHECKEADO CORRECTAMENTE',
+                                  if (response.contador>1) {
+                                    //Significa que el votante ya paso por esta pc
+                                    Swal.fire(
+                                      'El VOTANTE '+response.nombre+' '+response.apellido+' YA FUE CHECKEADO ANTERIORMENTE',
+                                      'CANTIDAD DE VECES: '+response.contador,
+                                      'error' 
+                                    ) 
+                                  }else{
+                                    //Significa que el votante fue checkeado correctamente
+                                    Swal.fire(
+                                      'VOTANTE '+response.nombre+' '+response.apellido+' CHECKEADO CORRECTAMENTE',
                                       '',
                                       'success'
-                                  )                                
+                                    ) 
+                                  }
+                                                                 
                               },
                               error: function(response) {
                                   console.log(response.responseJSON);
