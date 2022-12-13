@@ -11,7 +11,7 @@
     @php( $register_url = $register_url ? url($register_url) : '' )
 @endif
 
-@section('auth_header', __('adminlte::adminlte.register_message'))
+@section('auth_header', 'Registrar un nuevo usuario')
 
 @section('auth_body')
     <form action="{{ $register_url }}" method="post">
@@ -20,7 +20,7 @@
         {{-- Name field --}}
         <div class="input-group mb-3">
             <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
-                   value="{{ old('name') }}" placeholder="{{ __('adminlte::adminlte.full_name') }}" autofocus>
+                   value="{{ old('name') }}" placeholder="Nombre completo" autofocus>
 
             <div class="input-group-append">
                 <div class="input-group-text">
@@ -29,6 +29,24 @@
             </div>
 
             @error('name')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
+        </div>
+
+        {{-- PC field --}}
+        <div class="input-group mb-3">
+            <input type="text" name="pc" class="form-control @error('pc') is-invalid @enderror"
+                   value="{{ old('pc') }}" placeholder="PC Diputado" autofocus>
+
+            <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-flag {{ config('adminlte.classes_auth_icon', '') }}"></span>
+                </div>
+            </div>
+
+            @error('pc')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>
@@ -93,7 +111,7 @@
         {{-- Register button --}}
         <button type="submit" class="btn btn-block {{ config('adminlte.classes_auth_btn', 'btn-flat btn-primary') }}">
             <span class="fas fa-user-plus"></span>
-            {{ __('adminlte::adminlte.register') }}
+            Registrarse
         </button>
 
     </form>
