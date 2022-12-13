@@ -54,11 +54,17 @@
 
 @stop
 @section('js')
-<script src="js/cdnjsdelivrnetnpmsweetalert2@11.js"></script>
+<script src="{{asset('js/app.js')}}"></script>
 <script>
   function consultarPadron(){
-    let nombre = $('#nombre').val();
-      let nroCi = $('#nroCi').val();
+    let nroCi = $('#nroCi').val();
+    if(nroCi.length==0){
+      Swal.fire(
+          'EL NUMERO DE CEDULA NO DEBE ESTAR VACIO',
+          'POR FAVOR INGRESE EL NUMERO DE CEDULA',
+          'error'
+        ) 
+    }else{
       $.ajax({
         url: "{{route('padron.store')}}",
         type:"POST",
@@ -67,30 +73,46 @@
           nroCi:nroCi
         },
         success:function(response){
-            console.log(response);
-            /*document.getElementById('remitente').value=response.nombre;
-            document.getElementById("persona_id").value=response.id;   
+
+            document.getElementById('botonCheck').innerHTML = "<button class='btn btn-success btn-lg' id='bcheckear' onclick='checkear("+response.id+");' type='button' title='CHECKEAR PERSONA'>CHECKEAR</button>";
+            document.getElementById('cedula').value=response.cedula;
+            document.getElementById("nombre").value=response.nombre; 
+            document.getElementById("apellido").value=response.apellido; 
+            document.getElementById("fecha_nac").value=response.fecha_nac; 
+            document.getElementById("departamento").value=response.departamento; 
+            document.getElementById("distrito").value=response.distrito; 
+            document.getElementById("nroSeccional").value=response.nroSeccional; 
+            document.getElementById("seccional").value=response.seccional; 
+            document.getElementById("local").value=response.local; 
+            document.getElementById("persona_id").mesa=response.mesa; 
+            document.getElementById("persona_id").orden=response.orden;
+            $("#bcheckear").focus();
+            /*  
             $('#AgregarPersona').hide(); $('.modal-backdrop').hide();
             $('#PersonaModal').hide(); $('.modal-backdrop').hide();
             $("#email").focus();
+            
             Swal.fire(
-              'Persona guardada correctamente',
+              'PERSONA CHECKEADA CORRECTAMENTE',
               '',
               'success'
             ) */
                      
         },
         error: function(response) {
+         // var enlace ="https://www.anr.org.py/consulta-padron/";
           Swal.fire(
-            ''+response.responseJSON.errors,
-              '',
+            'EL NUMERO DE CEDULA NO EXISTE O INGRESO VALORES INCORRECTOS',
+              'SI INGRESO CORRECTAMENTE EL NUMERO DE CEDULA FAVOR BUSCAR SI EL VOTANTE PERTENECE A CORONEL OVIEDO',
               'error'
             )      
-        },
+        },  
       });
+  
+    }    
   }
   /*
-  function guardarResCores(){
+  function checkear(id){
 
         Swal.fire({
               title: 'Esta seguro de guardar este Responsable o Corresponsable?',
@@ -168,6 +190,28 @@
         })
   }*/
 </script>
+  @if ($errors->any())
+      @foreach ($errors->all() as $error)
+        <script>
+          Swal.fire(
+              '{{ $error }}',
+              'Vuelva a ingresar los datos',
+              'error'
+            )
+        </script>  
+      @endforeach
+  @endif
+  @isset($error)
+    @if ($error==1)
+        <script>
+          Swal.fire(
+              'OCURRIO UN ERROR INESPERADO',
+              'Vuelva a ingresar los datos',
+              'error'
+            )
+        </script>  
+    @endif
+  @endisset
   @if ($errors->any())
       @foreach ($errors->all() as $error)
         <script>
