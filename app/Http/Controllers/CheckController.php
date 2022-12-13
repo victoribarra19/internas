@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Check;
 use App\Http\Requests\StoreCheckRequest;
 use App\Http\Requests\UpdateCheckRequest;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -46,31 +47,32 @@ class CheckController extends Controller
     {
         // $request->ci;
         $id_user=Auth::id();
-        $padron=DB::table('Padrones')->where("numero_ced","=",$request->ci)->get();
-        $ultimo=DB::table('Padrones')->where("numero_ced","=",$request->ci)->max('contador');
+        $user_pc=User::find($id_user)->pc;
+        $padron=DB::table('padrones')->where("numero_ced","=",$request->ci)->get();
+        $ultimo=DB::table('checks')->where("numero_ced","=",$request->ci)->max('contador');
         if($ultimo==0){
             $contador=intval($ultimo)+1;
             //crear nuevo
             $check=Check::create([
-                'año'=>$request->año,
-                'dependencias_id'=>$request->id,
-                'estado_poas_id'=>'1',
-                'nro_seguimiento'=>'0',
-                'estado_seg_id'=>'1'
-            ]);
-            
+                'numero_ced'=>$padron[0]->numero_ced,
+                'codigo_sec'=>$padron[0]->codigo_sec,
+                'desc_sec'=>$padron[0]->desc_sec,
+                'slocal'=>$padron[0]->slocal,
+                'desc_locanr'=>$padron[0]->desc_locanr,
+                'contador'=>$contador,
+                'id_user'=>$user_pc
+            ]);     
         }else{
             $contador=intval($ultimo)+1;
             //actualizar
             $data = array(
-                'objetivo'	=>	$request->objetivo
+                'contador'=>$contador
             );
-            DB::table('objetivos')
-                ->where('id', $request->id)
-                ->update($data);
-            
+            DB::table('checks')
+                ->where('numero_ced', $padron[0]->numero_ced,)
+                ->update($data);     
         }
-            return response()->json(['success'=>'1','nombre'=>$padron[0]->nombre,'apellido'=>$padron[0]->apellido]);
+        return response()->json(['success'=>'1','nombre'=>$padron[0]->nombre,'apellido'=>$padron[0]->apellido,'contador'=>$contador]);
 
     }
     /**
