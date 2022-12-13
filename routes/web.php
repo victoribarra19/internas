@@ -3,6 +3,7 @@
 use App\Http\Controllers\CheckController;
 use App\Http\Controllers\PadronesController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ChartController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -41,3 +42,5 @@ Route::middleware(['auth:sanctum', 'verified'])->resource('check',CheckControlle
 Route::middleware(['auth:sanctum', 'verified'])->post('consultarPadron', [PadronesController::class,'consultarPadron'])->name('consultarPadron');
 Route::middleware(['auth:sanctum', 'verified'])->post('checkearVotante', [CheckController::class,'check'])->name('checkearVotante');
 
+Route::middleware(['auth:sanctum', 'verified'])->resource('charts',ChartController::class)->names('charts');
+Route::middleware(['auth:sanctum', 'verified'])->resource('padron',PadronesController::class)->names('padron');
