@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CheckController;
 use App\Http\Controllers\PadronesController;
+use App\Http\Controllers\ListaController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ChartController;
 use Illuminate\Support\Facades\Auth;
@@ -44,3 +45,4 @@ Route::middleware(['auth:sanctum', 'verified'])->post('checkearVotante', [CheckC
 
 Route::middleware(['auth:sanctum', 'verified'])->resource('charts',ChartController::class)->names('charts');
 Route::middleware(['auth:sanctum', 'verified'])->resource('padron',PadronesController::class)->names('padron');
+Route::middleware(['auth:sanctum', 'verified'])->resource('lista',ListaController::class)->names('lista');

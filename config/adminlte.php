@@ -318,7 +318,7 @@ return [
        //     'label'       => 4,
        //     'label_color' => 'success',
        // ],
-        ['header' => 'account_settings'],
+        ['header' => 'MENÚ'],
         [
             'text' => 'Padrón',
             'url'  => 'padron',
@@ -331,28 +331,9 @@ return [
             //'icon_color' => 'red',
             'icon' => 'fas fa-fw fa-edit',
         ],
-        [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
+       
         
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
-        ],
+        
     ],
 
     /*

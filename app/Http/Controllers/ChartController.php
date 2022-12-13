@@ -43,12 +43,52 @@ class ChartController extends Controller
         $candidato4=$c4->count();
 
         //Por Candidato y seccional
+        //seccional1
+        $s1_x_c1=DB::table('checks')->where("codigo_sec","=","123")->where("id_user","=","1")->get();
+        $candidato1x1=$s1_x_c1->count();
+
+        $s1_x_c2=DB::table('checks')->where("codigo_sec","=","123")->where("id_user","=","2")->get();
+        $candidato2x1=$s1_x_c2->count();
+
+        $s1_x_c3=DB::table('checks')->where("codigo_sec","=","123")->where("id_user","=","3")->get();
+        $candidato3x1=$s1_x_c3->count();
+
+        $s1_x_c4=DB::table('checks')->where("codigo_sec","=","123")->where("id_user","=","4")->get();
+        $candidato4x1=$s1_x_c4->count();
+        //seccional2
+        $s2_x_c1=DB::table('checks')->where("codigo_sec","=","338")->where("id_user","=","1")->get();
+        $candidato1x2=$s2_x_c1->count();
+
+        $s2_x_c2=DB::table('checks')->where("codigo_sec","=","338")->where("id_user","=","2")->get();
+        $candidato2x2=$s2_x_c2->count();
+
+        $s2_x_c3=DB::table('checks')->where("codigo_sec","=","338")->where("id_user","=","3")->get();
+        $candidato3x2=$s2_x_c3->count();
+
+        $s2_x_c4=DB::table('checks')->where("codigo_sec","=","338")->where("id_user","=","4")->get();
+        $candidato4x2=$s2_x_c4->count();
+        //seccional3
+        $s3_x_c1=DB::table('checks')->where("codigo_sec","=","339")->where("id_user","=","1")->get();
+        $candidato1x3=$s3_x_c1->count();
+
+        $s3_x_c2=DB::table('checks')->where("codigo_sec","=","339")->where("id_user","=","2")->get();
+        $candidato2x3=$s3_x_c2->count();
+
+        $s3_x_c3=DB::table('checks')->where("codigo_sec","=","339")->where("id_user","=","3")->get();
+        $candidato3x3=$s3_x_c3->count();
+
+        $s3_x_c4=DB::table('checks')->where("codigo_sec","=","339")->where("id_user","=","4")->get();
+        $candidato4x3=$s3_x_c4->count();
+
+        //FRAUDE TOTAL
+        $fraudes = DB::table('checks')->selectRaw('sum(contador)')->get();
+
 
         //Total en total
         $tot=DB::table('checks')->get();
         $total=$tot->count();
 
-        //Total fraude
+        
 
 
 
@@ -61,6 +101,19 @@ class ChartController extends Controller
             'candidato2' => $candidato2,
             'candidato3' => $candidato3,
             'candidato4' => $candidato4,
+            'candidato1x1' =>  $candidato1x1,
+            'candidato1x2' =>  $candidato1x2,
+            'candidato1x3' =>  $candidato1x3,
+            'candidato2x1' =>  $candidato2x1,
+            'candidato2x2' =>  $candidato2x2,
+            'candidato2x3' =>  $candidato2x3,
+            'candidato3x1' =>  $candidato3x1,
+            'candidato3x2' =>  $candidato3x2,
+            'candidato3x3' =>  $candidato3x3,
+            'candidato4x1' =>  $candidato4x1,
+            'candidato4x2' =>  $candidato4x2,
+            'candidato4x3' =>  $candidato4x3,
+            'fraudes' => $fraudes,
             'total' => $total
         ]]);
 
