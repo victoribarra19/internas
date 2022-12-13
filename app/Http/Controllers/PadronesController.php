@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Padrones;
 use App\Http\Requests\StorePadronesRequest;
 use App\Http\Requests\UpdatePadronesRequest;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class PadronesController extends Controller
 {
@@ -35,9 +38,15 @@ class PadronesController extends Controller
      * @param  \App\Http\Requests\StorePadronesRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorePadronesRequest $request)
+    public function store(Request $request)
     {
-        //
+        $padron=DB::table('padrones')->where("numero_ced","=",$request->nroCi)->get();
+        if($padron->count()>0) {   
+            return response()->json(['id'=>$padron->id,'cedula'=>$padron->cedula,'nombre'=>$padron->nombre,'apellido'=>$padron->apellido,'fecha_nac'=>$padron->fecha_naci,'departamento'=>$padron->fecha_naci,'distrito'=>$padron->distrito,'nroSeccional'=>$padron->nroSeccional,'seccional'=>$padron->seccional,'seccional'=>$padron->seccional]);
+                /*return response()->json(['error'=>3]);*/ 
+        }else{
+            return redirect()->route('padron.index')->with(['error'=>'1']);
+        }
     }
 
     /**
