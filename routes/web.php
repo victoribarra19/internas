@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ChartController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -34,3 +35,4 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::middleware(['auth:sanctum', 'verified'])->resource('user',UserController::class)->only(['index','edit','update','show','destroy','create','store'])->names('user');
+Route::middleware(['auth:sanctum', 'verified'])->resource('charts',ChartController::class)->names('charts');
