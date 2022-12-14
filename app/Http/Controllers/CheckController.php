@@ -69,7 +69,7 @@ class CheckController extends Controller
                 'contador'=>$contador
             );
             DB::table('checks')
-                ->where('numero_ced', $padron[0]->numero_ced,)
+                ->where('numero_ced', $request->ci,)
                 ->update($data);     
         }
         return response()->json(['success'=>'1','nombre'=>$padron[0]->nombre,'apellido'=>$padron[0]->apellido,'contador'=>$contador]);

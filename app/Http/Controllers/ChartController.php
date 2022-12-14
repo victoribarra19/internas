@@ -80,20 +80,22 @@ class ChartController extends Controller
         $s3_x_c4=DB::table('checks')->where("codigo_sec","=","339")->where("id_user","=","4")->get();
         $candidato4x3=$s3_x_c4->count();
 
-        //FRAUDE TOTAL
-        $fraudes = DB::table('checks')->selectRaw('sum(contador)')->get();
+        
 
 
         //Total en total
         $tot=DB::table('checks')->get();
         $total=$tot->count();
 
-        
+       //FRAUDE TOTAL
+       //$frad = DB::table('checks')->selectRaw('sum(contador)')->get();
+       $frad = DB::table('checks')->sum('contador');
+       $fraudes = intval($frad) - intval($total);
+
+        //return($fraudes);
 
 
-
-
-        return view('plots.plots',['plot_data' => [
+         return view('plots.plots',['plot_data' => [
             'secc1' => $secc1,
             'secc2' => $secc2,
             'secc3' => $secc3,
