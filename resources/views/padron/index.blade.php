@@ -12,53 +12,53 @@
   <div class="col-md-10">
       <div class="card">
         <div class="card-header bg-danger">
-        <div class="row">
+        
             <div class="col-md-6">
             CONSULTAR PADRÓN
-              <div class="input-group mb-6">
-              
-              {{-- {!! Form::label('nroCi','Persona:') !!}--}}
-                {!! Form::text('nroCi', null, ['class'=>'form-control', 'id'=>'nroCi','placeholder'=>'Ingrese el numero de C.I']) !!} 
-                    
-                <div class="input-group-append">
-                        <button class="btn btn-warning" id="bpConsultarPadron" onclick="consultarPadron();" type="button" title="CONSULTAR PADRON"><i class="fas fa-search"></i></button>  
-                    </div>
+              <center>
+                <div class="input-group mb-6">
+                  {!! Form::text('nroCi', null, ['class'=>'form-control', 'id'=>'nroCi','placeholder'=>'Ingrese el numero de C.I']) !!} 
+                  <div class="input-group-append">
+                          <button class="btn btn-warning" id="bpConsultarPadron" onclick="consultarPadron();" type="button" title="CONSULTAR PADRON"><i class="fas fa-search"></i></button>  
                   </div>
+                </div>
                 @error('nroCi')
                     <small class="text-danger">{{$message}}</small>
                 @enderror
-            </div>
+              </center>
+            </div><!--
             <div class="col-md-6">
               <div class="row">
-              <div class="col-md-3" id="botonCheck">
-                <button class="btn btn-success btn-app" onclick="consultarPadron();" disabled> CHECKEAR</button>
-              </div>
-              <div class="col-md-3">
-                <button type="button" class="btn btn-secondary btn-app" data-dismiss="modal">Limpiar</button>
-              </div>
+                <div class="col-md-3" id="botonCheck">
+                  <button class="btn btn-success btn-app" onclick="consultarPadron();" disabled> CHECKEAR</button>
+                </div>
+                <div class="col-md-3">
+                  <button type="button" class="btn btn-secondary btn-app" data-dismiss="modal">Limpiar</button>
+                </div>
               </div>
             </div>
-          </div>
+          </div>-->
 
          
         </div>
         
           <div class="card-body card-danger">
+            
             @include('padron.partials.form') 
           </div>
       
-        <!-- <div class="card-footer">
+        <div class="card-footer">
           <center>
             <div class="row">
               <div class="col" id="botonCheck">
-                <button class="btn btn-success btn-lg" onclick="consultarPadron();" disabled> CHECKEAR</button>
+                <button type="button" class="btn btn-success btn-lg" onclick="consultarPadron();" disabled> CHECKEAR</button>
               </div>
               <div class="col">
-                <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Limpiar</button>
+                <button type="button" class="btn btn-secondary btn-lg" onclick="limpiar();">Limpiar</button>
               </div>
             </div>
           </center>   
-        </div> -->
+        </div> 
       </div>
     </div>
 </div>
@@ -91,7 +91,7 @@
         },
         success:function(response){
             //console.log(response);
-            document.getElementById('botonCheck').innerHTML = "<button class='btn btn-success btn-app' id='bcheckear' onclick='checkear("+response.cedula+");' type='button' title='CHECKEAR PERSONA'>CHECKEAR</button>";
+            document.getElementById('botonCheck').innerHTML = "<button type='button' class='btn btn-success btn-app' id='bcheckear' onclick='checkear("+response.cedula+");' type='button' title='CHECKEAR PERSONA'>CHECKEAR</button>";
             document.getElementById('cedula').value=response.cedula;
              document.getElementById("nombre").value=response.nombre; 
             document.getElementById("apellido").value=response.apellido; 
@@ -160,6 +160,7 @@
                                       'CANTIDAD DE VECES: '+response.contador,
                                       'error' 
                                     ) 
+                                    limpiar();
                                   }else{
                                     //Significa que el votante fue checkeado correctamente
                                     Swal.fire(
@@ -167,6 +168,7 @@
                                       '',
                                       'success'
                                     ) 
+                                    limpiar();
                                   }
                                                                  
                               },
@@ -185,6 +187,21 @@
                   //Swal.fire('Ocurrio un error al intentar recibir este expediente', 'Vuelva a intentarlo', 'info')
                 }
         })
+  }
+  function limpiar(){
+    document.getElementById('botonCheck').innerHTML = "<button type='button' class='btn btn-success btn-app' onclick='consultarPadron();' disabled> CHECKEAR</button>";
+            document.getElementById('cedula').value="";
+             document.getElementById("nombre").value="";
+            document.getElementById("apellido").value="";
+            document.getElementById("fecha_nac").value="";
+            document.getElementById("departamento").value="";
+            document.getElementById("distrito").value="";
+            document.getElementById("nroSeccional").value="";
+            document.getElementById("seccional").value="";
+            document.getElementById("local").value="";
+            document.getElementById("mesa").value="";
+            document.getElementById("orden").value="";
+            document.getElementById("nroCi").value="";
   }
 </script>
   @if ($errors->any())
