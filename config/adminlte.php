@@ -30,7 +30,7 @@ return [
     |
     */
 
-    'use_ico_only' => false,
+    'use_ico_only' => true,
     'use_full_favicon' => false,
 
     /*
@@ -330,6 +330,12 @@ return [
             'url'  => 'charts',
             //'icon_color' => 'red',
             'icon' => 'fas fa-fw fa-edit',
+        ],
+        [
+            'text' => 'Lista',
+            'url'  => 'lista',
+            //'icon_color' => 'red',
+            'icon' => 'fas fa-fw fa-list',
         ],
        
         
