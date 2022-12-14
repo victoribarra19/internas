@@ -119,8 +119,8 @@ $(function () {
             labels: ["Seccional 1", "Seccional 2", "Seccional 3"],
             datasets: [{
                 
-                data: [12, 18, 5],
-                //data: [plot_data.secc1, plot_data.secc2, plot_data.secc3],
+                //data: [12, 18, 5],
+                data: [plot_data.secc1, plot_data.secc2, plot_data.secc3],
                 backgroundColor: [
                     'rgba(82, 75, 162, 0.8)',
                     'rgba(243, 98, 42, 0.8)',
@@ -155,11 +155,11 @@ $(function () {
     var myChart1 = new Chart(ctx1, {
         type: 'bar',
         data: {
-            labels: ["Carlos Godoy", "Del Puerto", "Derlis Rodriguez", "Ibarra"],
+            labels: ["Carlos Godoy", "Del Puerto", "Derlis Rodriguez", "Candidato"],
             datasets: [{
                 
-                data: [12, 18, 22,9],
-                //data: [plot_data.secc1, plot_data.secc2, plot_data.secc3],
+                //data: [12, 18, 22,9],
+                data: [plot_data.candidato1x1,plot_data.candidato2x1,plot_data.candidato3x1,plot_data.candidato4x1],
                 backgroundColor: [
                     'rgba(82, 75, 162, 0.8)',
                     'rgba(243, 98, 42, 0.8)',
@@ -195,11 +195,11 @@ $(function () {
     var myChart2 = new Chart(ctx2, {
         type: 'bar',
         data: {
-            labels: ["Carlos Godoy", "Del Puerto", "Derlis Rodriguez", "Ibarra"],
+            labels: ["Carlos Godoy", "Del Puerto", "Derlis Rodriguez", "Candidato"],
             datasets: [{
                 
-                data: [12, 18, 22,9],
-                //data: [plot_data.secc1, plot_data.secc2, plot_data.secc3],
+                //data: [12, 18, 22,9],
+                data: [plot_data.candidato1x2,plot_data.candidato2x2,plot_data.candidato3x2,plot_data.candidato4x2],
                 backgroundColor: [
                     'rgba(82, 75, 162, 0.8)',
                     'rgba(243, 98, 42, 0.8)',
@@ -235,11 +235,11 @@ $(function () {
     var myChart3 = new Chart(ctx3, {
         type: 'bar',
         data: {
-            labels: ["Carlos Godoy", "Del Puerto", "Derlis Rodriguez", "Ibarra"],
+            labels: ["Carlos Godoy", "Del Puerto", "Derlis Rodriguez", "Candidato"],
             datasets: [{
                 
-                data: [12, 18, 22,9],
-                //data: [plot_data.secc1, plot_data.secc2, plot_data.secc3],
+                //data: [12, 18, 22,9],
+                data: [plot_data.candidato1x3,plot_data.candidato2x3,plot_data.candidato3x3,plot_data.candidato4x3],
                 backgroundColor: [
                     'rgba(82, 75, 162, 0.8)',
                     'rgba(243, 98, 42, 0.8)',
@@ -275,11 +275,11 @@ $(function () {
     var myChartq = new Chart(ctxq, {
         type: 'bar',
         data: {
-            labels: ["Carlos Godoy", "Del Puerto", "Derlis Rodriguez", "Ibarra"],
+            labels: ["Carlos Godoy", "Del Puerto", "Derlis Rodriguez", "Candidato"],
             datasets: [{
                 
-                data: [12, 18, 22,9],
-                //data: [plot_data.secc1, plot_data.secc2, plot_data.secc3],
+                //data: [12, 18, 22,9],
+                data: [plot_data.candidato1, plot_data.candidato2, plot_data.candidato3,plot_data.candidato4],
                 backgroundColor: [
                     'rgba(82, 75, 162, 0.8)',
                     'rgba(243, 98, 42, 0.8)',

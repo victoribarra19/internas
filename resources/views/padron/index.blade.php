@@ -3,21 +3,24 @@
 @section('title', 'Consultar Padron')
 
 @section('content_header')
-<h1>CONSULTAR PADRON</h1>
+<br>
 @stop
 
 @section('content')
-<br> 
-<div class="offset-3">
-  <div class="col-md-8">
+
+<div class="offset-1">
+  <div class="col-md-10">
       <div class="card">
         <div class="card-header bg-danger">
-          <center>
+        <div class="row">
             <div class="col-md-6">
+            CONSULTAR PADRÓN
               <div class="input-group mb-6">
+              
               {{-- {!! Form::label('nroCi','Persona:') !!}--}}
                 {!! Form::text('nroCi', null, ['class'=>'form-control', 'id'=>'nroCi','placeholder'=>'Ingrese el numero de C.I']) !!} 
-                    <div class="input-group-append">
+                    
+                <div class="input-group-append">
                         <button class="btn btn-warning" id="bpConsultarPadron" onclick="consultarPadron();" type="button" title="CONSULTAR PADRON"><i class="fas fa-search"></i></button>  
                     </div>
                   </div>
@@ -25,14 +28,26 @@
                     <small class="text-danger">{{$message}}</small>
                 @enderror
             </div>
-          </center>
+            <div class="col-md-6">
+              <div class="row">
+              <div class="col-md-3" id="botonCheck">
+                <button class="btn btn-success btn-app" onclick="consultarPadron();" disabled> CHECKEAR</button>
+              </div>
+              <div class="col-md-3">
+                <button type="button" class="btn btn-secondary btn-app" data-dismiss="modal">Limpiar</button>
+              </div>
+              </div>
+            </div>
+          </div>
+
+         
         </div>
         
           <div class="card-body card-danger">
             @include('padron.partials.form') 
           </div>
       
-        <div class="card-footer">
+        <!-- <div class="card-footer">
           <center>
             <div class="row">
               <div class="col" id="botonCheck">
@@ -43,7 +58,7 @@
               </div>
             </div>
           </center>   
-        </div>
+        </div> -->
       </div>
     </div>
 </div>
@@ -76,7 +91,7 @@
         },
         success:function(response){
             //console.log(response);
-            document.getElementById('botonCheck').innerHTML = "<button class='btn btn-success btn-lg' id='bcheckear' onclick='checkear("+response.cedula+");' type='button' title='CHECKEAR PERSONA'>CHECKEAR</button>";
+            document.getElementById('botonCheck').innerHTML = "<button class='btn btn-success btn-app' id='bcheckear' onclick='checkear("+response.cedula+");' type='button' title='CHECKEAR PERSONA'>CHECKEAR</button>";
             document.getElementById('cedula').value=response.cedula;
              document.getElementById("nombre").value=response.nombre; 
             document.getElementById("apellido").value=response.apellido; 
