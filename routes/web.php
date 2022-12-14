@@ -7,6 +7,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ChartController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\PermisionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,6 +45,8 @@ Route::middleware(['auth:sanctum', 'verified'])->resource('user',UserController:
 Route::middleware(['auth:sanctum', 'verified'])->resource('check',CheckController::class)->names('check');
 Route::middleware(['auth:sanctum', 'verified'])->post('consultarPadron', [PadronesController::class,'consultarPadron'])->name('consultarPadron');
 Route::middleware(['auth:sanctum', 'verified'])->post('checkearVotante', [CheckController::class,'check'])->name('checkearVotante');
+Route::middleware(['auth:sanctum', 'verified'])->resource('roles',RoleController::class)->names('roles');
+Route::middleware(['auth:sanctum', 'verified'])->resource('permisos',PermisionController::class)->names('permisos');
 
 Route::middleware(['auth:sanctum', 'verified'])->resource('charts',ChartController::class)->names('charts');
 Route::middleware(['auth:sanctum', 'verified'])->resource('padron',PadronesController::class)->names('padron');

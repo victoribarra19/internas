@@ -7,6 +7,10 @@ use Illuminate\Support\Facades\DB;
 
 class ListaController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('can:lista.index')->only('index');
+    }
     public function index()
     {
         $lista=DB::table('padrones')->get();

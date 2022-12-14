@@ -17,6 +17,10 @@ class CheckController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('can:check.save')->only('check');
+    }
     public function index()
     {
         

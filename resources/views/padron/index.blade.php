@@ -3,7 +3,7 @@
 @section('title', 'Consultar Padron')
 
 @section('content_header')
-<br>
+
 @stop
 
 @section('content')
@@ -12,10 +12,10 @@
   <div class="col-md-10">
       <div class="card">
         <div class="card-header bg-danger">
-        
-            <div class="col-md-6">
-            CONSULTAR PADRÓN
-              <center>
+          <center>
+            <div class="col-md-7">
+            
+                <h5>CONSULTAR PADRON</h5>
                 <div class="input-group mb-6">
                   {!! Form::text('nroCi', null, ['class'=>'form-control', 'id'=>'nroCi','placeholder'=>'Ingrese el numero de C.I']) !!} 
                   <div class="input-group-append">
@@ -25,21 +25,22 @@
                 @error('nroCi')
                     <small class="text-danger">{{$message}}</small>
                 @enderror
-              </center>
-            </div><!--
-            <div class="col-md-6">
-              <div class="row">
-                <div class="col-md-3" id="botonCheck">
-                  <button class="btn btn-success btn-app" onclick="consultarPadron();" disabled> CHECKEAR</button>
-                </div>
-                <div class="col-md-3">
-                  <button type="button" class="btn btn-secondary btn-app" data-dismiss="modal">Limpiar</button>
+             
+            </div>
+          </center>
+            <!--
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class="col-md-3" id="botonCheck">
+                      <button class="btn btn-success btn-app" onclick="consultarPadron();" disabled> CHECKEAR</button>
+                    </div>
+                    <div class="col-md-3">
+                      <button type="button" class="btn btn-secondary btn-app" data-dismiss="modal">Limpiar</button>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>-->
-
-         
+            --> 
         </div>
         
           <div class="card-body card-danger">

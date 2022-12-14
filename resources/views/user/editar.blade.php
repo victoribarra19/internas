@@ -16,7 +16,7 @@
 
 <div class="offset-3">
     <div class="col-md-8">
-        <div class="card card-primary">
+        <div class="card card-danger">
             <div class="card-header">
                 <h3 class="card-title">ASIGNAR PERMISOS</h3>
             </div>
@@ -35,13 +35,13 @@
                             </div>
                         @endforeach
 
-                        {!!  Form::submit('Asignar rol',['class' => 'btn btn-primary mt-2']) !!}
+                        {!!  Form::submit('Asignar rol',['class' => 'btn btn-success mt-2']) !!}
 
                     {!! Form::close() !!}
                 </div>
                 <div class="card-footer">
                     
-                    <a  class="btn btn-secondary" href="/user">Cancelar</a>
+                    <a  class="btn btn-secondary" href="{{route('user.index')}}">Cancelar</a>
                 </div>
      
         </div>

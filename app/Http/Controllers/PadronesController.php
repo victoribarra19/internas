@@ -16,6 +16,11 @@ class PadronesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('can:padron.index')->only('index');
+        $this->middleware('can:padron.index')->only('consultarPadron');
+    }
     public function index()
     {
         //llamar a consultar padron
