@@ -53,7 +53,7 @@
                             <h5 style="color:rgba(82, 75, 162, 0.8);"><strong>Carlos Godoy: </strong>  {{$plot_data['candidato1x1']}}</h5>
                             <h5 style="color:rgba(243, 98, 42, 0.8);"><strong>Miguel del Puerto: </strong> {{$plot_data['candidato2x1']}}</h5>
                             <h5 style="color:rgba(255, 206, 86, 0.8);"><strong>Derlis Rodríguez: </strong> {{$plot_data['candidato3x1']}}</h5>
-                            <h5 style="color:rgba(255, 159, 64, 0.8);"><strong>Ibarra: </strong> {{$plot_data['candidato4x1']}}</h5>
+                            <h5 style="color:rgba(255, 159, 64, 0.8);"><strong>Candidato: </strong> {{$plot_data['candidato4x1']}}</h5>
                             <canvas id="myChart1" width="280" height="200"></canvas>
                         </div>
                         <div class="col-sm-4">
@@ -61,7 +61,7 @@
                             <h5 style="color:rgba(82, 75, 162, 0.8);"><strong>Carlos Godoy: </strong>  {{$plot_data['candidato1x2']}}</h5>
                             <h5 style="color:rgba(243, 98, 42, 0.8);"><strong>Miguel del Puerto: </strong> {{$plot_data['candidato2x2']}}</h5>
                             <h5 style="color:rgba(255, 206, 86, 0.8);"><strong>Derlis Rodríguez: </strong> {{$plot_data['candidato3x2']}}</h5>
-                            <h5 style="color:rgba(255, 159, 64, 0.8);"><strong>Ibarra: </strong> {{$plot_data['candidato4x2']}}</h5>
+                            <h5 style="color:rgba(255, 159, 64, 0.8);"><strong>Candidato: </strong> {{$plot_data['candidato4x2']}}</h5>
                             <canvas id="myChart2" width="280" height="200"></canvas>
                         </div>
                         <div class="col-sm-4">
@@ -69,7 +69,7 @@
                             <h5 style="color:rgba(82, 75, 162, 0.8);"><strong>Carlos Godoy: </strong>  {{$plot_data['candidato1x3']}}</h5>
                             <h5 style="color:rgba(243, 98, 42, 0.8);"><strong>Miguel del Puerto: </strong> {{$plot_data['candidato2x3']}}</h5>
                             <h5 style="color:rgba(255, 206, 86, 0.8);"><strong>Derlis Rodríguez: </strong> {{$plot_data['candidato3x3']}}</h5>
-                            <h5 style="color:rgba(255, 159, 64, 0.8);"><strong>Ibarra: </strong> {{$plot_data['candidato4x3']}}</h5>
+                            <h5 style="color:rgba(255, 159, 64, 0.8);"><strong>Candidato: </strong> {{$plot_data['candidato4x3']}}</h5>
                             <canvas id="myChart3" width="280" height="200"></canvas>
                         </div>
                     </div>
@@ -86,7 +86,7 @@
                             <h3 style="color:rgba(82, 75, 162, 0.8);"><strong>Carlos Godoy: </strong>  {{$plot_data['candidato1']}}</h3>
                             <h3 style="color:rgba(243, 98, 42, 0.8);"><strong>Miguel del Puerto: </strong> {{$plot_data['candidato2']}}</h3>
                             <h3 style="color:rgba(255, 206, 86, 0.8);"><strong>Derlis Rodríguez: </strong> {{$plot_data['candidato3']}}</h3>
-                            <h3 style="color:rgba(255, 159, 64, 0.8);"><strong>Ibarra: </strong> {{$plot_data['candidato4']}}</h3>
+                            <h3 style="color:rgba(255, 159, 64, 0.8);"><strong>Candidato: </strong> {{$plot_data['candidato4']}}</h3>
                         </div>
                         <div class="col-sm-8">
                             <canvas id="myChartq" width="280" height="100"></canvas>
