@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('dashboard');
 });
 
 Route::middleware([
@@ -29,6 +29,7 @@ Route::middleware([
     'verified'
 ])->group(function () {
     Route::get('/dashboard', function () {
+        //return redirect()->route('dashboard');
         return view('dashboard');
     })->name('dashboard');
 });
@@ -36,9 +37,9 @@ Route::middleware([
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::middleware(['auth:sanctum', 'verified'])->resource('padron',PadronesController::class)->names('padron');
 
 Route::middleware(['auth:sanctum', 'verified'])->resource('user',UserController::class)->only(['index','edit','update','show','destroy','create','store'])->names('user');
-Route::middleware(['auth:sanctum', 'verified'])->resource('padron',PadronesController::class)->names('padron');
 Route::middleware(['auth:sanctum', 'verified'])->resource('check',CheckController::class)->names('check');
 Route::middleware(['auth:sanctum', 'verified'])->post('consultarPadron', [PadronesController::class,'consultarPadron'])->name('consultarPadron');
 Route::middleware(['auth:sanctum', 'verified'])->post('checkearVotante', [CheckController::class,'check'])->name('checkearVotante');
