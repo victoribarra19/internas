@@ -19,7 +19,7 @@ class CheckController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('can:check.save')->only('check');
+        //$this->middleware('can:check.save')->only('check');
     }
     public function index()
     {

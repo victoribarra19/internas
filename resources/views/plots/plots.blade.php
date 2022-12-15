@@ -141,13 +141,12 @@ $(function () {
                         beginAtZero:true
                     }
                 }]
-            }
-        },
-        options: {        
+            },
             legend: {
                 display: false
             }
-}
+        
+        }
     });
 
 
@@ -180,13 +179,12 @@ $(function () {
                         beginAtZero:true
                     }
                 }]
+            },
+            legend: {
+                display: false
             }
-        },
-        options: {        
-  legend: {
-    display: false
-  }
-}
+        
+        }
     });
 
 
@@ -220,13 +218,12 @@ $(function () {
                         beginAtZero:true
                     }
                 }]
+            },
+            legend: {
+                display: false
             }
-        },
-        options: {        
-  legend: {
-    display: false
-  }
-}
+        
+        }
     });
 
 
@@ -260,13 +257,12 @@ $(function () {
                         beginAtZero:true
                     }
                 }]
+            },
+            legend: {
+                display: false
             }
-        },
-        options: {        
-  legend: {
-    display: false
-  }
-}
+        
+        }
     });
 
     // POR CANDIDatO ddirecto
@@ -300,13 +296,12 @@ $(function () {
                         beginAtZero:true
                     }
                 }]
+            },
+            legend: {
+                display: false
             }
-        },
-        options: {        
-  legend: {
-    display: false
-  }
-}
+        
+        }
     });
 
 });
