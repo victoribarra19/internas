@@ -30,7 +30,7 @@ Route::middleware([
 ])->group(function () {
     Route::get('/dashboard', function () {
         //return redirect()->route('dashboard');
-        return view('dashboard');
+        return view('padron.index');
     })->name('dashboard');
 });
 
