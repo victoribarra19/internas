@@ -14,6 +14,10 @@ class ChartController extends Controller
     //        ->header('Chartjs')
     //        ->body(new Box('Bar chart', view('plots.plots')));
     //}
+    public function __construct()
+    {
+        $this->middleware('can:charts.index')->only('index');
+    }
     public function index()
     {
         //$users=User::all();

@@ -322,21 +322,49 @@ return [
         [
             'text' => 'Padrón',
             'url'  => 'padron',
+            'can'=>'padron.index',
             //'icon_color' => 'red',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
             'text' => 'Informes',
+            
             'url'  => 'charts',
             //'icon_color' => 'red',
             'icon' => 'fas fa-fw fa-edit',
+            'can'=>'charts.index',
         ],
         [
             'text' => 'Lista',
             'url'  => 'lista',
+            
             //'icon_color' => 'red',
             'icon' => 'fas fa-fw fa-list',
+            'can'=>'lista.index',
         ],
+        [
+            'text' => 'USER',
+            'url'  => 'user',
+            'can'=>'user.index',
+            //'icon_color' => 'red',
+           
+        ],
+        [
+            'text' => 'ROLES',
+            'url'  => 'roles',
+            'can'=>'roles.index',
+            //'icon_color' => 'red',
+            
+        ],
+       
+        [
+            'text' => 'PERMISOS',
+            'url'  => 'permisos',
+            'can'=>'permisos.index',
+            //'icon_color' => 'red',
+         
+        ],
+       
        
         
         

@@ -12,13 +12,13 @@
   <div class="card-header">
     <center>
       <div class="col-md-6">
-      <a href="{{route('user.create')}}" class='btn btn-primary btn-block'> <i class="fa fa-user-plus"></i>  AÑADIR NUEVO USUARIO</a>
+      <a href="{{route('user.create')}}" class='btn btn-success btn-block'> <i class="fa fa-user-plus"></i>  AÑADIR NUEVO USUARIO</a>
       </div>
       </center>
   </div>
   <div class="card-body">
     <table id="usuarios" class="table table-hover table-bordered table-striped table-sm">
-      <thead class="bg-primary text-white">
+      <thead class="bg-danger text-white">
         <tr>
           <th scope="col">ID</th>
           <th scope="col">NOMBRE</th>
@@ -26,7 +26,7 @@
           <th scope="col">FECHA CREACIÓN</th>
           <th scope="col">FECHA MODIFICACIÓN</th>
           <th scope="col"></th>
-          <th scope="col"></th>
+
           <th scope="col"></th>
           
         </tr>
@@ -41,8 +41,6 @@
               <td scope="row">{{$user->created_at}}</td>
               <td scope="row">{{$user->updated_at}}</td>
               <td scope="row"><a class="btn btn-warning btn-sm" href="user/{{$user->id}}/edit"> <i class="fa fa-edit"></i> Asignar permisos</a></td>
-              <td scope="row"><a class="btn btn-success btn-sm" href="{{route('user.show',$user->id)}}" > <i class="fa fa-edit"></i> Asignar dependencia</a></td>
-             
               <form action="#" method="POST" class="formulario-eliminar">
                 @CSRF
                 @method('DELETE')
@@ -60,7 +58,7 @@
     
 @stop
 @section('js')
-  @include('cssyjs.js')
+  
 <script>
   $(document).ready(function() {
       $('#usuarios').DataTable({

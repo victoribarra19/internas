@@ -6,12 +6,20 @@
     @enderror
 </div>
 <div class="form-group">
+    {!! Form::label('pc','Pc Diputado:') !!}
+    {!! Form::text('pc', null, ['class'=>'form-control','placeholder'=>'Ingrese el nro de PC' ,'required']) !!}
+    @error('pc')
+        <small class="text-danger">{{$message}}</small>
+    @enderror
+</div>
+<div class="form-group">
     {!! Form::label('email','Correo Electronico:') !!}
     {!! Form::email('email', null, ['class'=>'form-control','placeholder'=>'Ingrese el nombre y el apellido del usuario' ,'required']) !!}
     @error('email')
         <small class="text-danger">{{$message}}</small>
     @enderror
 </div>
+
 {!! Form::label('password','Contraseña:') !!}
 <div class="input-group form-group">
     {!! Form::password('password', ['class'=>'form-control','required','placeholder'=>__('adminlte::adminlte.password')]) !!}
