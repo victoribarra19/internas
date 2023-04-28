@@ -22,68 +22,83 @@ class ChartController extends Controller
     {
         //$users=User::all();
 
-        //Por Seccional
-        $s1=DB::table('checks')->where("codigo_sec","=","123")->get();
-        $secc1=$s1->count();
-        //$secc1=57;
+    
 
-        $s2=DB::table('checks')->where("codigo_sec","=","338")->get();
-        $secc2=$s2->count();
+        //Por Local de votación
+        $l1=DB::table('checks')->where("id_user","=","1")->get();
+        $local1=$l1->count();
 
-        $s3=DB::table('checks')->where("codigo_sec","=","339")->get();
-        $secc3=$s3->count();
+        $l2=DB::table('checks')->where("id_user","=","2")->get();
+        $local2=$l2->count();
 
-        //Por Candidato
-        $c1=DB::table('checks')->where("id_user","=","1")->get();
-        $candidato1=$c1->count();
+        $l3=DB::table('checks')->where("id_user","=","3")->get();
+        $local3=$l3->count();
 
-        $c2=DB::table('checks')->where("id_user","=","2")->get();
-        $candidato2=$c2->count();
+        $l4=DB::table('checks')->where("id_user","=","4")->get();
+        $local4=$l4->count();
 
-        $c3=DB::table('checks')->where("id_user","=","3")->get();
-        $candidato3=$c3->count();
+        $l5=DB::table('checks')->where("id_user","=","5")->get();
+        $local5=$l5->count();
 
-        $c4=DB::table('checks')->where("id_user","=","4")->get();
-        $candidato4=$c4->count();
+        $l6=DB::table('checks')->where("id_user","=","6")->get();
+        $local6=$l6->count();
 
-        //Por Candidato y seccional
-        //seccional1
-        $s1_x_c1=DB::table('checks')->where("codigo_sec","=","123")->where("id_user","=","1")->get();
-        $candidato1x1=$s1_x_c1->count();
+        $l7=DB::table('checks')->where("id_user","=","7")->get();
+        $local7=$l7->count();
 
-        $s1_x_c2=DB::table('checks')->where("codigo_sec","=","123")->where("id_user","=","2")->get();
-        $candidato2x1=$s1_x_c2->count();
+        $l8=DB::table('checks')->where("id_user","=","8")->get();
+        $local8=$l8->count();
 
-        $s1_x_c3=DB::table('checks')->where("codigo_sec","=","123")->where("id_user","=","3")->get();
-        $candidato3x1=$s1_x_c3->count();
+        $l9=DB::table('checks')->where("id_user","=","9")->get();
+        $local9=$l9->count();
 
-        $s1_x_c4=DB::table('checks')->where("codigo_sec","=","123")->where("id_user","=","4")->get();
-        $candidato4x1=$s1_x_c4->count();
-        //seccional2
-        $s2_x_c1=DB::table('checks')->where("codigo_sec","=","338")->where("id_user","=","1")->get();
-        $candidato1x2=$s2_x_c1->count();
+        $l10=DB::table('checks')->where("id_user","=","10")->get();
+        $local10=$l10->count();
 
-        $s2_x_c2=DB::table('checks')->where("codigo_sec","=","338")->where("id_user","=","2")->get();
-        $candidato2x2=$s2_x_c2->count();
+        $l11=DB::table('checks')->where("id_user","=","11")->get();
+        $local11=$l11->count();
 
-        $s2_x_c3=DB::table('checks')->where("codigo_sec","=","338")->where("id_user","=","3")->get();
-        $candidato3x2=$s2_x_c3->count();
+        $l12=DB::table('checks')->where("id_user","=","12")->get();
+        $local12=$l12->count();
 
-        $s2_x_c4=DB::table('checks')->where("codigo_sec","=","338")->where("id_user","=","4")->get();
-        $candidato4x2=$s2_x_c4->count();
-        //seccional3
-        $s3_x_c1=DB::table('checks')->where("codigo_sec","=","339")->where("id_user","=","1")->get();
-        $candidato1x3=$s3_x_c1->count();
+        
+        //fraudes por seccional
+        $frad1 = DB::table('checks')->where("id_user","=","1")->sum('contador');
+        $fraudes1 = intval($frad1) - intval($local1);
 
-        $s3_x_c2=DB::table('checks')->where("codigo_sec","=","339")->where("id_user","=","2")->get();
-        $candidato2x3=$s3_x_c2->count();
+        $frad2 = DB::table('checks')->where("id_user","=","2")->sum('contador');
+        $fraudes2 = intval($frad2) - intval($local2);
 
-        $s3_x_c3=DB::table('checks')->where("codigo_sec","=","339")->where("id_user","=","3")->get();
-        $candidato3x3=$s3_x_c3->count();
+        $frad3 = DB::table('checks')->where("id_user","=","3")->sum('contador');
+        $fraudes3 = intval($frad3) - intval($local3);
 
-        $s3_x_c4=DB::table('checks')->where("codigo_sec","=","339")->where("id_user","=","4")->get();
-        $candidato4x3=$s3_x_c4->count();
+        $frad4 = DB::table('checks')->where("id_user","=","4")->sum('contador');
+        $fraudes4 = intval($frad4) - intval($local4);
 
+        $frad5 = DB::table('checks')->where("id_user","=","5")->sum('contador');
+        $fraudes5 = intval($frad5) - intval($local5);
+
+        $frad6 = DB::table('checks')->where("id_user","=","6")->sum('contador');
+        $fraudes6 = intval($frad6) - intval($local6);
+
+        $frad7 = DB::table('checks')->where("id_user","=","7")->sum('contador');
+        $fraudes7 = intval($frad7) - intval($local7);
+
+        $frad8 = DB::table('checks')->where("id_user","=","8")->sum('contador');
+        $fraudes8 = intval($frad8) - intval($local8);
+
+        $frad9 = DB::table('checks')->where("id_user","=","9")->sum('contador');
+        $fraudes9 = intval($frad9) - intval($local9);
+
+        $frad10 = DB::table('checks')->where("id_user","=","10")->sum('contador');
+        $fraudes10 = intval($frad10) - intval($local10);
+
+        $frad11 = DB::table('checks')->where("id_user","=","11")->sum('contador');
+        $fraudes11 = intval($frad11) - intval($local11);
+
+        $frad12 = DB::table('checks')->where("id_user","=","12")->sum('contador');
+        $fraudes12 = intval($frad12) - intval($local12);
+        
         
 
 
@@ -100,25 +115,30 @@ class ChartController extends Controller
 
 
          return view('plots.plots',['plot_data' => [
-            'secc1' => $secc1,
-            'secc2' => $secc2,
-            'secc3' => $secc3,
-            'candidato1' => $candidato1,
-            'candidato2' => $candidato2,
-            'candidato3' => $candidato3,
-            'candidato4' => $candidato4,
-            'candidato1x1' =>  $candidato1x1,
-            'candidato1x2' =>  $candidato1x2,
-            'candidato1x3' =>  $candidato1x3,
-            'candidato2x1' =>  $candidato2x1,
-            'candidato2x2' =>  $candidato2x2,
-            'candidato2x3' =>  $candidato2x3,
-            'candidato3x1' =>  $candidato3x1,
-            'candidato3x2' =>  $candidato3x2,
-            'candidato3x3' =>  $candidato3x3,
-            'candidato4x1' =>  $candidato4x1,
-            'candidato4x2' =>  $candidato4x2,
-            'candidato4x3' =>  $candidato4x3,
+            'local1' => $local1,
+            'local2' => $local2,
+            'local3' => $local3,
+            'local4' => $local4,
+            'local5' => $local5,
+            'local6' => $local6,
+            'local7' => $local7,
+            'local8' => $local8,
+            'local9' => $local9,
+            'local10' => $local10,
+            'local11' => $local11,
+            'local12' => $local12,
+            'fraudes1' => $fraudes1,
+            'fraudes2' => $fraudes2,
+            'fraudes3' => $fraudes3,
+            'fraudes4' => $fraudes4,
+            'fraudes5' => $fraudes5,
+            'fraudes6' => $fraudes6,
+            'fraudes7' => $fraudes7,
+            'fraudes8' => $fraudes8,
+            'fraudes9' => $fraudes9,
+            'fraudes10' => $fraudes10,
+            'fraudes11' => $fraudes11,
+            'fraudes12' => $fraudes12,
             'fraudes' => $fraudes,
             'total' => $total
         ]]);

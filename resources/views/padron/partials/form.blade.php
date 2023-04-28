@@ -47,10 +47,14 @@
                 <small class="text-danger">{{$message}}</small>
             @enderror
         </div>
+
+
+        
+
         <div class="form-group">
-            {!! Form::label('nroSeccional','NRO. SECCIONAL:') !!}
-            {!! Form::text('nroSeccional'." ".'seccional', null, ['class'=>'form-control-plaintext' ,'disabled','id'=>'nroSeccional']),Form::text('seccional', null, ['class'=>'form-control-plaintext' ,'disabled','id'=>'seccional']) !!}
-            @error('nroSeccional')
+            {!! Form::label('seccional','NACIONALIDAD:') !!}
+            {!! Form::text('seccional', null, ['class'=>'form-control-plaintext' ,'hidden','id'=>'nroSeccional']),Form::text('seccional', null, ['class'=>'form-control-plaintext' ,'hide','id'=>'seccional']) !!}
+            @error('seccional')
                 <small class="text-danger">{{$message}}</small>
             @enderror
         </div>

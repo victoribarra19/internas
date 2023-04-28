@@ -10,11 +10,65 @@
 
 <div class="offset-1">
   <div class="col-md-10">
+
+  @switch($user->pc)
+    @case(1)
+         <h5  >Cantidad de personas que pasaron por esta PC: {{$local1}}, cantidad que intentaron repetir {{$fraudes1}}</h5>
+        @break
+
+    @case(2)
+         <h5  >Cantidad de personas que pasaron por esta PC: {{$local2}}, cantidad que intentaron repetir {{$fraudes2}}</h5>
+        @break
+
+    @case(3)
+         <h5  >Cantidad de personas que pasaron por esta PC: {{$local3}}, cantidad que intentaron repetir {{$fraudes3}}</h5>
+        @break
+
+    @case(4)
+         <h5  >Cantidad de personas que pasaron por esta PC: {{$local4}}, cantidad que intentaron repetir {{$fraudes4}}</h5>
+        @break
+
+    @case(5)
+         <h5  >Cantidad de personas que pasaron por esta PC: {{$local5}}, cantidad que intentaron repetir {{$fraudes5}}</h5>
+        @break
+
+    @case(6)
+         <h5  >Cantidad de personas que pasaron por esta PC: {{$local6}}, cantidad que intentaron repetir {{$fraudes6}}</h5>
+        @break
+
+    @case(7)
+         <h5  >Cantidad de personas que pasaron por esta PC: {{$local7}}, cantidad que intentaron repetir {{$fraudes7}}</h5>
+        @break
+
+    @case(8)
+         <h5  >Cantidad de personas que pasaron por esta PC: {{$local8}}, cantidad que intentaron repetir {{$fraudes8}}</h5>
+        @break
+
+    @case(9)
+         <h5  >Cantidad de personas que pasaron por esta PC: {{$local9}}, cantidad que intentaron repetir {{$fraudes9}}</h5>
+        @break
+
+    @case(10)
+         <h5  >Cantidad de personas que pasaron por esta PC: {{$local10}}, cantidad que intentaron repetir {{$fraudes10}}</h5>
+        @break
+
+    @case(11)
+         <h5  >Cantidad de personas que pasaron por esta PC: {{$local11}}, cantidad que intentaron repetir {{$fraudes11}}</h5>
+        @break
+
+    @case(12)
+         <h5  >Cantidad de personas que pasaron por esta PC: {{$local12}}, cantidad que intentaron repetir {{$fraudes12}}</h5>
+        @break
+
+    @default
+        <span>Something went wrong, please try again</span>
+@endswitch
+  
+  
       <div class="card">
         <div class="card-header bg-danger">
           <center>
             <div class="col-md-7">
-            
                 <h5>CONSULTAR PADRON</h5>
                 <div class="input-group mb-6">
                   {!! Form::text('nroCi', null, ['class'=>'form-control', 'id'=>'nroCi','placeholder'=>'Ingrese el numero de C.I']) !!} 

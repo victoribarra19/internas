@@ -26,76 +26,69 @@
 
     <div class="card card-danger">
                 <div class="card-header">
-                    <h3 class="card-title">Participación por Seccional</h3>
+                    <h3 class="card-title">Participación por Local de votación</h3>
                 </div>
                     <div class="card-body">
                         <div class="row">
-                        <div class="col-sm-4">
-                            <h3 style="color:rgba(82, 75, 162, 0.8);"><strong>Seccional 1: </strong>  {{$plot_data['secc1']}}</h3>
-                            <h3 style="color:rgba(243, 98, 42, 0.8);"><strong>Seccional 2: </strong> {{$plot_data['secc2']}}</h3>
-                            <h3 style="color:rgba(255, 159, 64, 0.8);"><strong>Seccional 3: </strong> {{$plot_data['secc3']}}</h3>
+                        <div class="col-sm-6">
+                            <h3 style="color:rgba(82, 75, 162, 0.8);"><strong>Colegio Nacional Pedro P. Peña: </strong>  {{$plot_data['local1']}}</h3>
+                            <h3 style="color:rgba(243, 98, 42, 0.8);"><strong>Colegio Enrique S. Lopez: </strong> {{$plot_data['local2']}}</h3>
+                            <h3 style="color:rgba(255, 206, 86, 0.8);"><strong>Escuela Bernardino Caballero: </strong> {{$plot_data['local3']}}</h3>
+                            <h3 style="color:rgba(75, 192, 192, 0.8);"><strong>Escuela Wenceslaa Escalada: </strong>  {{$plot_data['local4']}}</h3>
+                            <h3 style="color:rgba(153, 102, 255, 0.8);"><strong>Colegio San Roque: </strong> {{$plot_data['local5']}}</h3>
+                            <h3 style="color:rgba(255, 159, 64, 0.8);"><strong>Escuela Florentín Oviedo: </strong> {{$plot_data['local6']}}</h3>
+                            
                         </div>
-                        <div class="col-sm-8">
+                        <div class="col-sm-6">
+                            
+                            <h3 style="color:rgba(182, 85, 172, 0.8);"><strong>Escuela Alicio Peralta: </strong>  {{$plot_data['local7']}}</h3>
+                            <h3 style="color:rgba(143, 98, 42, 0.8);"><strong>Escuela Capillita: </strong> {{$plot_data['local8']}}</h3>
+                            <h3 style="color:rgba(100, 155, 164, 0.8);"><strong>Escuela Manuel Ortiz Guerrero: </strong> {{$plot_data['local9']}}</h3>
+                            <h3 style="color:rgba(82, 175, 102, 0.8);"><strong>Colegio de San Antonio: </strong>  {{$plot_data['local10']}}</h3>
+                            <h3 style="color:rgba(143, 198, 42, 0.8);"><strong>Escuela Blas Garay: </strong> {{$plot_data['local11']}}</h3>
+                            <h3 style="color:rgba(200, 55, 200, 0.8);"><strong>Escuela Calle 1 (Blas Garay): </strong> {{$plot_data['local12']}}</h3>
+                        </div>
+                        <div class="col-sm-12">
                             <canvas id="myChart" width="280" height="100"></canvas>
                         </div>
                     </div>
                 </div>
     </div>
 
+
+    
     <div class="card card-danger">
                 <div class="card-header">
-                    <h3 class="card-title">Por seccional  y por candidato</h3>
+                    <h3 class="card-title">Intento de Fraude por Local de votación</h3>
                 </div>
                     <div class="card-body">
                         <div class="row">
-                        <div class="col-sm-4">
-                            <h4>Secc 1</h4>
-                            <h5 style="color:rgba(82, 75, 162, 0.8);"><strong>Carlos Godoy: </strong>  {{$plot_data['candidato1x1']}}</h5>
-                            <h5 style="color:rgba(243, 98, 42, 0.8);"><strong>Miguel del Puerto: </strong> {{$plot_data['candidato2x1']}}</h5>
-                            <h5 style="color:rgba(255, 206, 86, 0.8);"><strong>Derlis Rodríguez: </strong> {{$plot_data['candidato3x1']}}</h5>
-                            <h5 style="color:rgba(255, 159, 64, 0.8);"><strong>Candidato: </strong> {{$plot_data['candidato4x1']}}</h5>
-                            <canvas id="myChart1" width="280" height="200"></canvas>
+                        <div class="col-sm-6">
+                            <h3 style="color:rgba(82, 75, 162, 0.8);"><strong>Colegio Nacional Pedro P. Peña: </strong>  {{$plot_data['fraudes1']}}</h3>
+                            <h3 style="color:rgba(243, 98, 42, 0.8);"><strong>Colegio Enrique S. Lopez: </strong> {{$plot_data['fraudes2']}}</h3>
+                            <h3 style="color:rgba(255, 206, 86, 0.8);"><strong>Escuela Bernardino Caballero: </strong> {{$plot_data['fraudes3']}}</h3>
+                            <h3 style="color:rgba(75, 192, 192, 0.8);"><strong>Escuela Wenceslaa Escalada: </strong>  {{$plot_data['fraudes4']}}</h3>
+                            <h3 style="color:rgba(153, 102, 255, 0.8);"><strong>Colegio San Roque: </strong> {{$plot_data['fraudes5']}}</h3>
+                            <h3 style="color:rgba(255, 159, 64, 0.8);"><strong>Escuela Florentín Oviedo: </strong> {{$plot_data['fraudes6']}}</h3>
+                            
                         </div>
-                        <div class="col-sm-4">
-                            <h4>Secc 2</h4>
-                            <h5 style="color:rgba(82, 75, 162, 0.8);"><strong>Carlos Godoy: </strong>  {{$plot_data['candidato1x2']}}</h5>
-                            <h5 style="color:rgba(243, 98, 42, 0.8);"><strong>Miguel del Puerto: </strong> {{$plot_data['candidato2x2']}}</h5>
-                            <h5 style="color:rgba(255, 206, 86, 0.8);"><strong>Derlis Rodríguez: </strong> {{$plot_data['candidato3x2']}}</h5>
-                            <h5 style="color:rgba(255, 159, 64, 0.8);"><strong>Candidato: </strong> {{$plot_data['candidato4x2']}}</h5>
-                            <canvas id="myChart2" width="280" height="200"></canvas>
+                        <div class="col-sm-6">
+                            
+                            <h3 style="color:rgba(182, 85, 172, 0.8);"><strong>Escuela Alicio Peralta: </strong>  {{$plot_data['fraudes7']}}</h3>
+                            <h3 style="color:rgba(143, 98, 42, 0.8);"><strong>Escuela Capillita: </strong> {{$plot_data['fraudes8']}}</h3>
+                            <h3 style="color:rgba(100, 155, 164, 0.8);"><strong>Escuela Manuel Ortiz Guerrero: </strong> {{$plot_data['fraudes9']}}</h3>
+                            <h3 style="color:rgba(82, 175, 102, 0.8);"><strong>Colegio de San Antonio: </strong>  {{$plot_data['fraudes10']}}</h3>
+                            <h3 style="color:rgba(143, 198, 42, 0.8);"><strong>Escuela Blas Garay: </strong> {{$plot_data['fraudes11']}}</h3>
+                            <h3 style="color:rgba(200, 55, 200, 0.8);"><strong>Escuela Calle 1 (Blas Garay): </strong> {{$plot_data['fraudes12']}}</h3>
                         </div>
-                        <div class="col-sm-4">
-                            <h4>Secc 3</h4>
-                            <h5 style="color:rgba(82, 75, 162, 0.8);"><strong>Carlos Godoy: </strong>  {{$plot_data['candidato1x3']}}</h5>
-                            <h5 style="color:rgba(243, 98, 42, 0.8);"><strong>Miguel del Puerto: </strong> {{$plot_data['candidato2x3']}}</h5>
-                            <h5 style="color:rgba(255, 206, 86, 0.8);"><strong>Derlis Rodríguez: </strong> {{$plot_data['candidato3x3']}}</h5>
-                            <h5 style="color:rgba(255, 159, 64, 0.8);"><strong>Candidato: </strong> {{$plot_data['candidato4x3']}}</h5>
-                            <canvas id="myChart3" width="280" height="200"></canvas>
+                        <div class="col-sm-12">
+                            <canvas id="myChart1" width="280" height="100"></canvas>
                         </div>
                     </div>
                 </div>
     </div>
 
-    <div class="card card-danger">
-                <div class="card-header">
-                    <h3 class="card-title">Participación por Diputados total</h3>
-                </div>
-                    <div class="card-body">
-                        <div class="row">
-                        <div class="col-sm-4">
-                            <h3 style="color:rgba(82, 75, 162, 0.8);"><strong>Carlos Godoy: </strong>  {{$plot_data['candidato1']}}</h3>
-                            <h3 style="color:rgba(243, 98, 42, 0.8);"><strong>Miguel del Puerto: </strong> {{$plot_data['candidato2']}}</h3>
-                            <h3 style="color:rgba(255, 206, 86, 0.8);"><strong>Derlis Rodríguez: </strong> {{$plot_data['candidato3']}}</h3>
-                            <h3 style="color:rgba(255, 159, 64, 0.8);"><strong>Candidato: </strong> {{$plot_data['candidato4']}}</h3>
-                        </div>
-                        <div class="col-sm-8">
-                            <canvas id="myChartq" width="280" height="100"></canvas>
-                        </div>
-                    </div>
-                </div>
-    </div>
-
-
+  
 </div>
    
 
@@ -116,18 +109,24 @@ $(function () {
     var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ["Seccional 1", "Seccional 2", "Seccional 3"],
+            labels: ["Colegio Nacional Pedro P. Peña","Colegio Enrique S. Lopez","Escuela Bernardino Caballero","Escuela Wenceslaa Escalada","Colegio San Roque","Escuela Florentín Oviedo","Escuela Alicio Peralta","Escuela Capillita","Escuela Manuel O. Guerrero","Colegio de San Antonio","Escuela Blas Garay","Escuela Calle 1"],
             datasets: [{
                 
                 //data: [12, 18, 5],
-                data: [plot_data.secc1, plot_data.secc2, plot_data.secc3],
+                data: [plot_data.local1, plot_data.local2, plot_data.local3, plot_data.local4,plot_data.local5,plot_data.local6,plot_data.local7,plot_data.local8,plot_data.local9,plot_data.local10,plot_data.local11,plot_data.local12],
                 backgroundColor: [
                     'rgba(82, 75, 162, 0.8)',
                     'rgba(243, 98, 42, 0.8)',
-                   // 'rgba(255, 206, 86, 0.8)',
-                   // 'rgba(75, 192, 192, 0.8)',
-                   // 'rgba(153, 102, 255, 0.8)',
-                    'rgba(255, 159, 64, 0.8)'
+                    'rgba(255, 206, 86, 0.8)',
+                    'rgba(75, 192, 192, 0.8)',
+                    'rgba(153, 102, 255, 0.8)',
+                    'rgba(255, 159, 64, 0.8)',
+                    'rgba(182, 85, 172, 0.8)',
+                    'rgba(143, 98, 42, 0.8)',
+                    'rgba(100, 155, 164, 0.8)',
+                    'rgba((82, 175, 102, 0.8)',
+                    'rgba(143, 198, 42, 0.8)',
+                    'rgba(200, 55, 200, 0.8)'
                 ],
                 //hoverOffset: 4
         
@@ -138,7 +137,16 @@ $(function () {
             scales: {
                 yAxes: [{
                     ticks: {
-                        beginAtZero:true
+                        beginAtZero:true,
+                        autoSkip: false
+                    }
+                }]
+            },
+            scales: {
+                xAxes: [{
+                    ticks: {
+                        beginAtZero:true,
+                        autoSkip: false
                     }
                 }]
             },
@@ -149,7 +157,59 @@ $(function () {
         }
     });
 
+    var ctx = document.getElementById("myChart1").getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ["Colegio Nacional Pedro P. Peña","Colegio Enrique S. Lopez","Escuela Bernardino Caballero","Escuela Wenceslaa Escalada","Colegio San Roque","Escuela Florentín Oviedo","Escuela Alicio Peralta","Escuela Capillita","Escuela Manuel O. Guerrero","Colegio de San Antonio","Escuela Blas Garay","Escuela Calle 1"],
+            datasets: [{
+                
+                //data: [12, 18, 5],
+                data: [plot_data.fraudes1, plot_data.fraudes2, plot_data.fraudes3, plot_data.fraudes4,plot_data.fraudes5,plot_data.fraudes6,plot_data.fraudes7,plot_data.fraudes8,plot_data.fraudes9,plot_data.fraudes10,plot_data.fraudes11,plot_data.fraudes12],
+                backgroundColor: [
+                    'rgba(82, 75, 162, 0.8)',
+                    'rgba(243, 98, 42, 0.8)',
+                    'rgba(255, 206, 86, 0.8)',
+                    'rgba(75, 192, 192, 0.8)',
+                    'rgba(153, 102, 255, 0.8)',
+                    'rgba(255, 159, 64, 0.8)',
+                    'rgba(182, 85, 172, 0.8)',
+                    'rgba(143, 98, 42, 0.8)',
+                    'rgba(100, 155, 164, 0.8)',
+                    'rgba((82, 175, 102, 0.8)',
+                    'rgba(143, 198, 42, 0.8)',
+                    'rgba(200, 55, 200, 0.8)'
+                ],
+                //hoverOffset: 4
+        
+            }]
+        },
+        
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true,
+                        autoSkip: false
+                    }
+                }]
+            },
+            scales: {
+                xAxes: [{
+                    ticks: {
+                        beginAtZero:true,
+                        autoSkip: false
+                    }
+                }]
+            },
+            legend: {
+                display: false
+            }
+        
+        }
+    });
 
+    /*
     var ctx1 = document.getElementById("myChart1").getContext('2d');
     var myChart1 = new Chart(ctx1, {
         type: 'bar',
@@ -303,7 +363,7 @@ $(function () {
         
         }
     });
-
+ */
 });
 </script>
 @stop
