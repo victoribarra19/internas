@@ -45,8 +45,8 @@
                             <h3 style="color:rgba(143, 98, 42, 0.8);"><strong>Escuela Capillita: </strong> {{$plot_data['local8']}}</h3>
                             <h3 style="color:rgba(100, 155, 164, 0.8);"><strong>Escuela Manuel Ortiz Guerrero: </strong> {{$plot_data['local9']}}</h3>
                             <h3 style="color:rgba(82, 175, 102, 0.8);"><strong>Colegio de San Antonio: </strong>  {{$plot_data['local10']}}</h3>
-                            <h3 style="color:rgba(143, 198, 42, 0.8);"><strong>Escuela Blas Garay: </strong> {{$plot_data['local11']}}</h3>
-                            <h3 style="color:rgba(200, 55, 200, 0.8);"><strong>Escuela Calle 1 (Blas Garay): </strong> {{$plot_data['local12']}}</h3>
+                            <h3 style="color:rgba(143, 198, 42, 0.8);"><strong> Blas Garay: </strong> {{$plot_data['local11']}}</h3>
+                         <!--   <h3 style="color:rgba(200, 55, 200, 0.8);"><strong>Escuela Calle 1 (Blas Garay): </strong> {{$plot_data['local12']}}</h3> -->
                         </div>
                         <div class="col-sm-12">
                             <canvas id="myChart" width="280" height="100"></canvas>
@@ -78,8 +78,8 @@
                             <h3 style="color:rgba(143, 98, 42, 0.8);"><strong>Escuela Capillita: </strong> {{$plot_data['fraudes8']}}</h3>
                             <h3 style="color:rgba(100, 155, 164, 0.8);"><strong>Escuela Manuel Ortiz Guerrero: </strong> {{$plot_data['fraudes9']}}</h3>
                             <h3 style="color:rgba(82, 175, 102, 0.8);"><strong>Colegio de San Antonio: </strong>  {{$plot_data['fraudes10']}}</h3>
-                            <h3 style="color:rgba(143, 198, 42, 0.8);"><strong>Escuela Blas Garay: </strong> {{$plot_data['fraudes11']}}</h3>
-                            <h3 style="color:rgba(200, 55, 200, 0.8);"><strong>Escuela Calle 1 (Blas Garay): </strong> {{$plot_data['fraudes12']}}</h3>
+                            <h3 style="color:rgba(143, 198, 42, 0.8);"><strong> Blas Garay: </strong> {{$plot_data['fraudes11']}}</h3>
+                           <!-- <h3 style="color:rgba(200, 55, 200, 0.8);"><strong>Escuela Calle 1 (Blas Garay): </strong> {{$plot_data['fraudes12']}}</h3> -->
                         </div>
                         <div class="col-sm-12">
                             <canvas id="myChart1" width="280" height="100"></canvas>
@@ -109,11 +109,11 @@ $(function () {
     var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ["Colegio Nacional Pedro P. Peña","Colegio Enrique S. Lopez","Escuela Bernardino Caballero","Escuela Wenceslaa Escalada","Colegio San Roque","Escuela Florentín Oviedo","Escuela Alicio Peralta","Escuela Capillita","Escuela Manuel O. Guerrero","Colegio de San Antonio","Escuela Blas Garay","Escuela Calle 1"],
+            labels: ["Colegio Nacional Pedro P. Peña","Colegio Enrique S. Lopez","Escuela Bernardino Caballero","Escuela Wenceslaa Escalada","Colegio San Roque","Escuela Florentín Oviedo","Escuela Alicio Peralta","Escuela Capillita","Escuela Manuel O. Guerrero","Colegio de San Antonio","Blas Garay"],
             datasets: [{
                 
                 //data: [12, 18, 5],
-                data: [plot_data.local1, plot_data.local2, plot_data.local3, plot_data.local4,plot_data.local5,plot_data.local6,plot_data.local7,plot_data.local8,plot_data.local9,plot_data.local10,plot_data.local11,plot_data.local12],
+                data: [plot_data.local1, plot_data.local2, plot_data.local3, plot_data.local4,plot_data.local5,plot_data.local6,plot_data.local7,plot_data.local8,plot_data.local9,plot_data.local10,plot_data.local11],
                 backgroundColor: [
                     'rgba(82, 75, 162, 0.8)',
                     'rgba(243, 98, 42, 0.8)',
@@ -125,8 +125,8 @@ $(function () {
                     'rgba(143, 98, 42, 0.8)',
                     'rgba(100, 155, 164, 0.8)',
                     'rgba((82, 175, 102, 0.8)',
-                    'rgba(143, 198, 42, 0.8)',
-                    'rgba(200, 55, 200, 0.8)'
+                    'rgba(143, 198, 42, 0.8)'
+                    //'rgba(200, 55, 200, 0.8)'
                 ],
                 //hoverOffset: 4
         
@@ -161,11 +161,11 @@ $(function () {
     var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ["Colegio Nacional Pedro P. Peña","Colegio Enrique S. Lopez","Escuela Bernardino Caballero","Escuela Wenceslaa Escalada","Colegio San Roque","Escuela Florentín Oviedo","Escuela Alicio Peralta","Escuela Capillita","Escuela Manuel O. Guerrero","Colegio de San Antonio","Escuela Blas Garay","Escuela Calle 1"],
+            labels: ["Colegio Nacional Pedro P. Peña","Colegio Enrique S. Lopez","Escuela Bernardino Caballero","Escuela Wenceslaa Escalada","Colegio San Roque","Escuela Florentín Oviedo","Escuela Alicio Peralta","Escuela Capillita","Escuela Manuel O. Guerrero","Colegio de San Antonio","Blas Garay"],
             datasets: [{
                 
                 //data: [12, 18, 5],
-                data: [plot_data.fraudes1, plot_data.fraudes2, plot_data.fraudes3, plot_data.fraudes4,plot_data.fraudes5,plot_data.fraudes6,plot_data.fraudes7,plot_data.fraudes8,plot_data.fraudes9,plot_data.fraudes10,plot_data.fraudes11,plot_data.fraudes12],
+                data: [plot_data.fraudes1, plot_data.fraudes2, plot_data.fraudes3, plot_data.fraudes4,plot_data.fraudes5,plot_data.fraudes6,plot_data.fraudes7,plot_data.fraudes8,plot_data.fraudes9,plot_data.fraudes10,plot_data.fraudes11],
                 backgroundColor: [
                     'rgba(82, 75, 162, 0.8)',
                     'rgba(243, 98, 42, 0.8)',
@@ -177,8 +177,8 @@ $(function () {
                     'rgba(143, 98, 42, 0.8)',
                     'rgba(100, 155, 164, 0.8)',
                     'rgba((82, 175, 102, 0.8)',
-                    'rgba(143, 198, 42, 0.8)',
-                    'rgba(200, 55, 200, 0.8)'
+                    'rgba(143, 198, 42, 0.8)'
+                    //'rgba(200, 55, 200, 0.8)'
                 ],
                 //hoverOffset: 4
         
